@@ -1,0 +1,2590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="AlgoForge Labs — Final Year Project Guidance, AI, Data Science, Machine Learning, Web Development and IEEE Projects.">
+
+    <meta name="keywords"
+          content="AlgoForge Labs, final year projects, AI projects, machine learning projects, data science projects, web development, IEEE projects">
+
+    <meta name="author"
+          content="AlgoForge Labs">
+
+    <title>
+        AlgoForge Labs | Project Guidance
+    </title>
+
+
+    <!-- =========================================
+         GOOGLE FONT
+    ========================================== -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+
+    <!-- =========================================
+         STYLE
+    ========================================== -->
+
+    <style>
+
+        /* =========================================
+           RESET
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            font-family:
+                "Inter",
+                Arial,
+                sans-serif;
+
+            background: #ffffff;
+
+            color: #080a10;
+
+            line-height: 1.6;
+
+            overflow-x: hidden;
+        }
+
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+
+        /* =========================================
+           VARIABLES
+        ========================================== */
+
+        :root {
+
+            --black: #080a10;
+
+            --dark: #070916;
+
+            --gray: #6d7280;
+
+            --light-gray: #f5f6f8;
+
+            --border: #e7e8ec;
+
+            --white: #ffffff;
+
+            --whatsapp: #25D366;
+        }
+
+
+
+        /* =========================================
+           NAVBAR
+        ========================================== */
+
+        .navbar {
+
+            height: 78px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 0 7vw;
+
+            border-bottom:
+                1px solid var(--border);
+
+            position: sticky;
+
+            top: 0;
+
+            background:
+                rgba(255,255,255,0.94);
+
+            backdrop-filter:
+                blur(15px);
+
+            z-index: 1000;
+        }
+
+
+        .brand {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 11px;
+
+            font-size: 20px;
+
+            font-weight: 800;
+
+            letter-spacing: -0.7px;
+        }
+
+
+        .brand img {
+
+            width: 40px;
+
+            height: 40px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+        }
+
+
+        .brand-name {
+            color: #080a10;
+        }
+
+
+        .brand-gray {
+
+            color: #737780;
+
+            font-weight: 500;
+        }
+
+
+        .nav-links {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 28px;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            color: #555a65;
+        }
+
+
+        .nav-links a {
+
+            transition:
+                color 0.2s ease,
+                transform 0.2s ease;
+        }
+
+
+        .nav-links a:hover {
+
+            color: #000;
+
+            transform:
+                translateY(-1px);
+        }
+
+
+        .nav-button {
+
+            padding:
+                11px 17px;
+
+            background:
+                var(--black);
+
+            color:
+                white !important;
+
+            border-radius: 8px;
+        }
+
+
+
+        /* =========================================
+           HERO
+        ========================================== */
+
+        .hero {
+
+            min-height: 650px;
+
+            padding:
+                90px 8vw 70px;
+
+            display: grid;
+
+            grid-template-columns:
+                1.05fr 0.95fr;
+
+            gap: 6vw;
+
+            align-items: center;
+        }
+
+
+        .eyebrow {
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            letter-spacing: 2px;
+
+            color: #777c86;
+
+            margin-bottom: 18px;
+        }
+
+
+        .hero h1 {
+
+            font-size:
+                clamp(45px, 6vw, 78px);
+
+            line-height: 1.02;
+
+            letter-spacing: -4px;
+
+            max-width: 760px;
+        }
+
+
+        .hero h1 span {
+
+            color: #70757f;
+        }
+
+
+        .hero-description {
+
+            max-width: 600px;
+
+            margin-top: 28px;
+
+            margin-bottom: 30px;
+
+            font-size: 17px;
+
+            color: var(--gray);
+        }
+
+
+
+        /* =========================================
+           BUTTONS
+        ========================================== */
+
+        .buttons {
+
+            display: flex;
+
+            gap: 12px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .button {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            padding:
+                14px 20px;
+
+            border-radius: 9px;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            border:
+                1px solid var(--border);
+
+            transition:
+                0.2s ease;
+        }
+
+
+        .button:hover {
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 8px 20px rgba(0,0,0,0.08);
+        }
+
+
+        .button-primary {
+
+            background:
+                var(--black);
+
+            color:
+                white;
+
+            border-color:
+                var(--black);
+        }
+
+
+        .button-secondary {
+
+            background:
+                white;
+        }
+
+
+        .whatsapp-button {
+
+            background:
+                var(--whatsapp);
+
+            color:
+                white;
+
+            border-color:
+                var(--whatsapp);
+        }
+
+
+        .whatsapp-button:hover {
+
+            background:
+                #20bd5a;
+
+            border-color:
+                #20bd5a;
+        }
+
+
+
+        /* =========================================
+           TECHNOLOGY TAGS
+        ========================================== */
+
+        .tags {
+
+            display: flex;
+
+            gap: 9px;
+
+            flex-wrap: wrap;
+
+            margin-top: 30px;
+        }
+
+
+        .tag {
+
+            padding:
+                7px 11px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                100px;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            color: #5e636e;
+        }
+
+
+
+        /* =========================================
+           HERO VISUAL
+        ========================================== */
+
+        .hero-visual {
+
+            height: 430px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 28px;
+
+            background:
+                #070916;
+
+            box-shadow:
+                0 30px 70px rgba(0,0,0,0.15);
+        }
+
+
+        .orb {
+
+            width: 280px;
+
+            height: 280px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle at 40% 35%,
+                    #273c59 0,
+                    #101827 48%,
+                    #070916 72%
+                );
+
+            box-shadow:
+                0 0 100px
+                rgba(65,137,214,0.25);
+        }
+
+
+
+        /* =========================================
+           CODE WINDOW
+        ========================================== */
+
+        .code-window {
+
+            position: absolute;
+
+            width: 76%;
+
+            padding: 18px;
+
+            background:
+                rgba(255,255,255,0.07);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.13);
+
+            border-radius: 15px;
+
+            backdrop-filter:
+                blur(14px);
+
+            box-shadow:
+                0 25px 50px
+                rgba(0,0,0,0.3);
+
+            color:
+                #e7edf7;
+        }
+
+
+        .window-buttons {
+
+            display: flex;
+
+            gap: 6px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .window-buttons span {
+
+            width: 7px;
+
+            height: 7px;
+
+            border-radius: 50%;
+
+            background:
+                #818795;
+        }
+
+
+        .code {
+
+            font-family:
+                monospace;
+
+            font-size: 13px;
+
+            line-height: 2.1;
+        }
+
+
+        .line-number {
+
+            color:
+                #687386;
+        }
+
+
+
+        /* =========================================
+           FLOATING CARDS
+        ========================================== */
+
+        .floating-card {
+
+            position: absolute;
+
+            background:
+                white;
+
+            border-radius:
+                12px;
+
+            padding:
+                13px 15px;
+
+            box-shadow:
+                0 12px 35px
+                rgba(0,0,0,0.2);
+
+            z-index: 5;
+        }
+
+
+        .floating-card small {
+
+            display: block;
+
+            font-size: 8px;
+
+            letter-spacing: 1.5px;
+
+            color:
+                #858a94;
+
+            font-weight: 800;
+        }
+
+
+        .floating-card strong {
+
+            display: block;
+
+            margin-top: 3px;
+
+            font-size: 12px;
+        }
+
+
+        .floating-top {
+
+            top: 35px;
+
+            left: 30px;
+        }
+
+
+        .floating-bottom {
+
+            bottom: 30px;
+
+            right: 28px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 9px;
+        }
+
+
+        .status-dot {
+
+            width: 8px;
+
+            height: 8px;
+
+            border-radius: 50%;
+
+            background:
+                #2eb66f;
+        }
+
+
+
+        /* =========================================
+           STATS
+        ========================================== */
+
+        .stats {
+
+            margin:
+                0 8vw;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            padding:
+                25px 0;
+
+            border-top:
+                1px solid var(--border);
+
+            border-bottom:
+                1px solid var(--border);
+        }
+
+
+        .stat {
+
+            padding:
+                0 30px;
+
+            border-right:
+                1px solid var(--border);
+        }
+
+
+        .stat:first-child {
+
+            padding-left: 0;
+        }
+
+
+        .stat:last-child {
+
+            border-right: none;
+        }
+
+
+        .stat-number {
+
+            display: block;
+
+            font-size: 24px;
+
+            font-weight: 700;
+        }
+
+
+        .stat-label {
+
+            font-size: 12px;
+
+            color:
+                var(--gray);
+        }
+
+
+
+        /* =========================================
+           GENERAL SECTION
+        ========================================== */
+
+        .section {
+
+            padding:
+                115px 8vw;
+        }
+
+
+        .section-header {
+
+            margin-bottom:
+                48px;
+        }
+
+
+        .section-title {
+
+            font-size:
+                clamp(35px,4vw,56px);
+
+            letter-spacing:
+                -2.5px;
+
+            line-height:
+                1.05;
+        }
+
+
+
+        /* =========================================
+           SERVICES
+        ========================================== */
+
+        .services {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            border-top:
+                1px solid var(--border);
+
+            border-left:
+                1px solid var(--border);
+        }
+
+
+        .service {
+
+            min-height: 205px;
+
+            padding: 30px;
+
+            border-right:
+                1px solid var(--border);
+
+            border-bottom:
+                1px solid var(--border);
+
+            transition:
+                0.25s ease;
+        }
+
+
+        .service:hover {
+
+            background:
+                #fafafa;
+
+            transform:
+                translateY(-3px);
+        }
+
+
+        .service-number {
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            color:
+                #8a8f99;
+        }
+
+
+        .service h3 {
+
+            font-size: 18px;
+
+            margin-top: 28px;
+
+            margin-bottom: 9px;
+        }
+
+
+        .service p {
+
+            font-size: 13px;
+
+            color:
+                var(--gray);
+
+            max-width: 300px;
+        }
+
+
+
+        /* =========================================
+           DARK DOMAIN SECTION
+        ========================================== */
+
+        .dark-section {
+
+            background:
+                var(--dark);
+
+            color:
+                white;
+
+            padding:
+                110px 8vw;
+
+            display: grid;
+
+            grid-template-columns:
+                0.8fr 1.2fr;
+
+            gap:
+                10vw;
+        }
+
+
+        .dark-section .eyebrow {
+
+            color:
+                #8e94a1;
+        }
+
+
+        .dark-section .section-title {
+
+            color:
+                white;
+        }
+
+
+        .dark-description {
+
+            color:
+                #9aa0ab;
+
+            font-size: 14px;
+
+            margin-top: 22px;
+
+            max-width: 380px;
+        }
+
+
+        .domain-list {
+
+            border-top:
+                1px solid #272a32;
+        }
+
+
+        .domain {
+
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            padding:
+                18px 0;
+
+            border-bottom:
+                1px solid #272a32;
+        }
+
+
+        .domain-name {
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            letter-spacing:
+                1.5px;
+        }
+
+
+        .domain-description {
+
+            color:
+                #858b97;
+
+            font-size: 12px;
+        }
+
+
+
+        /* =========================================
+           ABOUT / PROCESS
+        ========================================== */
+
+        .about {
+
+            display: grid;
+
+            grid-template-columns:
+                0.8fr 1.2fr;
+
+            gap:
+                10vw;
+        }
+
+
+        .step {
+
+            display: flex;
+
+            gap: 25px;
+
+            padding:
+                24px 0;
+
+            border-top:
+                1px solid var(--border);
+        }
+
+
+        .step-number {
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            color:
+                #9a9ea7;
+        }
+
+
+        .step p {
+
+            font-size: 13px;
+
+            color:
+                var(--gray);
+        }
+
+
+        .step strong {
+
+            color:
+                var(--black);
+
+            font-size: 14px;
+        }
+
+
+
+        /* =========================================
+           CONTACT
+        ========================================== */
+
+        .contact {
+
+            background:
+                #f1f2f4;
+
+            text-align:
+                center;
+
+            padding:
+                120px 20px;
+        }
+
+
+        .contact-inner {
+
+            max-width:
+                800px;
+
+            margin:
+                auto;
+        }
+
+
+        .contact-description {
+
+            color:
+                #70757f;
+
+            margin:
+                20px 0 30px;
+        }
+
+
+        .contact-buttons {
+
+            display: flex;
+
+            justify-content:
+                center;
+
+            gap:
+                12px;
+
+            flex-wrap:
+                wrap;
+        }
+
+
+
+        /* =========================================
+           CONTACT INFORMATION
+        ========================================== */
+
+        .contact-info {
+
+            display: flex;
+
+            justify-content:
+                center;
+
+            align-items:
+                center;
+
+            gap:
+                25px;
+
+            flex-wrap:
+                wrap;
+
+            margin-top:
+                30px;
+        }
+
+
+        .contact-info-item {
+
+            font-size:
+                13px;
+
+            color:
+                #6d7280;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                8px;
+        }
+
+
+        .contact-info-item strong {
+
+            color:
+                #080a10;
+        }
+
+
+
+        /* =========================================
+           FLOATING WHATSAPP
+        ========================================== */
+
+        .floating-whatsapp {
+
+            position:
+                fixed;
+
+            right:
+                25px;
+
+            bottom:
+                25px;
+
+            width:
+                58px;
+
+            height:
+                58px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            background:
+                var(--whatsapp);
+
+            color:
+                white;
+
+            border-radius:
+                50%;
+
+            box-shadow:
+                0 8px 30px
+                rgba(37,211,102,0.35);
+
+            z-index:
+                999;
+
+            transition:
+                0.25s ease;
+        }
+
+
+        .floating-whatsapp:hover {
+
+            transform:
+                translateY(-5px)
+                scale(1.05);
+
+            box-shadow:
+                0 12px 35px
+                rgba(37,211,102,0.45);
+        }
+
+
+        .whatsapp-icon {
+
+            width:
+                27px;
+
+            height:
+                27px;
+
+            fill:
+                white;
+        }
+
+
+
+        /* =========================================
+           FOOTER
+        ========================================== */
+
+        footer {
+
+            display:
+                flex;
+
+            justify-content:
+                space-between;
+
+            padding:
+                25px 8vw;
+
+            border-top:
+                1px solid var(--border);
+
+            font-size:
+                11px;
+
+            color:
+                #8a8f99;
+        }
+
+
+
+        /* =========================================
+           MOBILE
+        ========================================== */
+
+        @media (max-width: 850px) {
+
+            .navbar {
+
+                padding:
+                    0 5vw;
+            }
+
+
+            .nav-links a:not(.nav-button) {
+
+                display:
+                    none;
+            }
+
+
+            .hero {
+
+                grid-template-columns:
+                    1fr;
+
+                padding:
+                    65px 6vw;
+            }
+
+
+            .hero-visual {
+
+                height:
+                    360px;
+            }
+
+
+            .stats {
+
+                margin:
+                    0 6vw;
+            }
+
+
+            .section {
+
+                padding:
+                    80px 6vw;
+            }
+
+
+            .services {
+
+                grid-template-columns:
+                    1fr 1fr;
+            }
+
+
+            .dark-section {
+
+                grid-template-columns:
+                    1fr;
+
+                gap:
+                    55px;
+
+                padding:
+                    80px 6vw;
+            }
+
+
+            .about {
+
+                grid-template-columns:
+                    1fr;
+
+                gap:
+                    55px;
+            }
+
+        }
+
+
+
+        @media (max-width: 560px) {
+
+            .navbar {
+
+                height:
+                    70px;
+            }
+
+
+            .brand {
+
+                font-size:
+                    17px;
+            }
+
+
+            .brand img {
+
+                width:
+                    35px;
+
+                height:
+                    35px;
+            }
+
+
+            .hero {
+
+                padding-top:
+                    50px;
+            }
+
+
+            .hero h1 {
+
+                letter-spacing:
+                    -2.5px;
+            }
+
+
+            .hero-visual {
+
+                height:
+                    320px;
+            }
+
+
+            .code-window {
+
+                width:
+                    85%;
+            }
+
+
+            .floating-top {
+
+                left:
+                    16px;
+            }
+
+
+            .floating-bottom {
+
+                right:
+                    16px;
+            }
+
+
+            .stats {
+
+                grid-template-columns:
+                    1fr;
+
+                gap:
+                    20px;
+
+                padding:
+                    22px 0;
+            }
+
+
+            .stat {
+
+                border:
+                    none;
+
+                padding:
+                    0;
+            }
+
+
+            .services {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .section {
+
+                padding:
+                    70px 6vw;
+            }
+
+
+            .dark-section {
+
+                padding:
+                    70px 6vw;
+            }
+
+
+            .contact {
+
+                padding:
+                    85px 20px;
+            }
+
+
+            .contact-buttons {
+
+                flex-direction:
+                    column;
+
+                align-items:
+                    stretch;
+
+                max-width:
+                    320px;
+
+                margin:
+                    auto;
+            }
+
+
+            .contact-buttons .button {
+
+                width:
+                    100%;
+            }
+
+
+            .contact-info {
+
+                flex-direction:
+                    column;
+
+                gap:
+                    12px;
+            }
+
+
+            footer {
+
+                display:
+                    block;
+
+                padding:
+                    22px 6vw;
+            }
+
+
+            footer div {
+
+                margin:
+                    4px 0;
+            }
+
+
+            .floating-whatsapp {
+
+                width:
+                    54px;
+
+                height:
+                    54px;
+
+                right:
+                    18px;
+
+                bottom:
+                    18px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+
+<!-- =========================================
+     NAVIGATION
+========================================= -->
+
+<header class="navbar">
+
+
+    <a href="#home"
+       class="brand">
+
+
+        <!--
+            IMPORTANT:
+            Keep hero.jpeg in the same folder
+            as this index.html
+        -->
+
+        <img
+            src="hero.jpeg"
+            alt="AlgoForge Labs Logo">
+
+
+        <span class="brand-name">
+
+            algoforge<span class="brand-gray">
+                _labs
+            </span>
+
+        </span>
+
+
+    </a>
+
+
+
+    <nav class="nav-links">
+
+
+        <a href="#services">
+            Services
+        </a>
+
+
+        <a href="#projects">
+            Projects
+        </a>
+
+
+        <a href="#about">
+            About
+        </a>
+
+
+        <a href="#contact"
+           class="nav-button">
+
+            DM "PROJECT"
+
+        </a>
+
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================================
+     MAIN
+========================================= -->
+
+<main id="home">
+
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section class="hero">
+
+
+    <div class="hero-content">
+
+
+        <p class="eyebrow">
+
+            PROJECT GUIDANCE · FREELANCING
+
+        </p>
+
+
+        <h1>
+
+            Build your final year project.
+
+            <br>
+
+            <span>
+                Build it right.
+            </span>
+
+        </h1>
+
+
+        <p class="hero-description">
+
+            Practical software projects for students —
+            from idea selection and development to
+            documentation, demos and presentation support.
+
+        </p>
+
+
+        <div class="buttons">
+
+
+            <a href="#contact"
+               class="button button-primary">
+
+                Start a Project
+
+                <span>
+                    ↗
+                </span>
+
+            </a>
+
+
+            <a href="#services"
+               class="button button-secondary">
+
+                Explore Services
+
+            </a>
+
+
+        </div>
+
+
+
+        <div class="tags">
+
+
+            <span class="tag">
+                AI
+            </span>
+
+
+            <span class="tag">
+                Data Science
+            </span>
+
+
+            <span class="tag">
+                Machine Learning
+            </span>
+
+
+            <span class="tag">
+                Web
+            </span>
+
+
+            <span class="tag">
+                IEEE
+            </span>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- HERO VISUAL -->
+
+    <div class="hero-visual">
+
+
+        <div class="orb"></div>
+
+
+        <div class="floating-card floating-top">
+
+
+            <small>
+                ALGOFORGE LABS
+            </small>
+
+
+            <strong>
+                Ideas → Code → Project
+            </strong>
+
+
+        </div>
+
+
+
+        <div class="code-window">
+
+
+            <div class="window-buttons">
+
+                <span></span>
+
+                <span></span>
+
+                <span></span>
+
+            </div>
+
+
+            <div class="code">
+
+
+                <div>
+
+                    <span class="line-number">
+                        01
+                    </span>
+
+                    &nbsp; build(project)
+
+                </div>
+
+
+                <div>
+
+                    <span class="line-number">
+                        02
+                    </span>
+
+                    &nbsp; develop(solution)
+
+                </div>
+
+
+                <div>
+
+                    <span class="line-number">
+                        03
+                    </span>
+
+                    &nbsp; document(result)
+
+                </div>
+
+
+                <div>
+
+                    <span class="line-number">
+                        04
+                    </span>
+
+                    &nbsp; present(confidently)
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="floating-card floating-bottom">
+
+
+            <span class="status-dot"></span>
+
+
+            <div>
+
+
+                <small>
+                    AVAILABLE
+                </small>
+
+
+                <strong>
+                    Project slots open
+                </strong>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================
+     STATS
+========================================= -->
+
+<section class="stats">
+
+
+    <div class="stat">
+
+
+        <strong class="stat-number">
+            01
+        </strong>
+
+
+        <span class="stat-label">
+            Idea to execution
+        </span>
+
+
+    </div>
+
+
+
+    <div class="stat">
+
+
+        <strong class="stat-number">
+            05+
+        </strong>
+
+
+        <span class="stat-label">
+            Core domains
+        </span>
+
+
+    </div>
+
+
+
+    <div class="stat">
+
+
+        <strong class="stat-number">
+            360°
+        </strong>
+
+
+        <span class="stat-label">
+            Project support
+        </span>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================
+     SERVICES
+========================================= -->
+
+<section id="services"
+         class="section">
+
+
+    <div class="section-header">
+
+
+        <p class="eyebrow">
+            WHAT WE DO
+        </p>
+
+
+        <h2 class="section-title">
+            Everything your project needs.
+        </h2>
+
+
+    </div>
+
+
+
+    <div class="services">
+
+
+        <article class="service">
+
+
+            <span class="service-number">
+                01
+            </span>
+
+
+            <h3>
+                Project Development
+            </h3>
+
+
+            <p>
+                End-to-end software projects built
+                around your academic requirements.
+            </p>
+
+
+        </article>
+
+
+
+        <article class="service">
+
+
+            <span class="service-number">
+                02
+            </span>
+
+
+            <h3>
+                AI & Machine Learning
+            </h3>
+
+
+            <p>
+                ML, NLP, computer vision and
+                intelligent application development.
+            </p>
+
+
+        </article>
+
+
+
+        <article class="service">
+
+
+            <span class="service-number">
+                03
+            </span>
+
+
+            <h3>
+                Web Development
+            </h3>
+
+
+            <p>
+                Clean, responsive web applications
+                using modern technologies.
+            </p>
+
+
+        </article>
+
+
+
+        <article class="service">
+
+
+            <span class="service-number">
+                04
+            </span>
+
+
+            <h3>
+                Documentation
+            </h3>
+
+
+            <p>
+                Project reports, diagrams,
+                presentations and technical documentation.
+            </p>
+
+
+        </article>
+
+
+
+        <article class="service">
+
+
+            <span class="service-number">
+                05
+            </span>
+
+
+            <h3>
+                IEEE Development
+            </h3>
+
+
+            <p>
+                Support for research-oriented
+                implementations and IEEE-style projects.
+            </p>
+
+
+        </article>
+
+
+
+        <article class="service">
+
+
+            <span class="service-number">
+                06
+            </span>
+
+
+            <h3>
+                Project Guidance
+            </h3>
+
+
+            <p>
+                From selecting a practical topic
+                to understanding and presenting your work.
+            </p>
+
+
+        </article>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================
+     DOMAINS
+========================================= -->
+
+<section id="projects"
+         class="dark-section">
+
+
+    <div>
+
+
+        <p class="eyebrow">
+            DOMAINS
+        </p>
+
+
+        <h2 class="section-title">
+            Choose your direction.
+        </h2>
+
+
+        <p class="dark-description">
+
+            Software projects focused on current
+            academic and industry-relevant domains.
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="domain-list">
+
+
+        <div class="domain">
+
+
+            <span class="domain-name">
+                AI
+            </span>
+
+
+            <span class="domain-description">
+                Intelligent applications
+            </span>
+
+
+        </div>
+
+
+
+        <div class="domain">
+
+
+            <span class="domain-name">
+                DATA
+            </span>
+
+
+            <span class="domain-description">
+                Analytics & visualization
+            </span>
+
+
+        </div>
+
+
+
+        <div class="domain">
+
+
+            <span class="domain-name">
+                ML
+            </span>
+
+
+            <span class="domain-description">
+                Predictive systems
+            </span>
+
+
+        </div>
+
+
+
+        <div class="domain">
+
+
+            <span class="domain-name">
+                WEB
+            </span>
+
+
+            <span class="domain-description">
+                Modern applications
+            </span>
+
+
+        </div>
+
+
+
+        <div class="domain">
+
+
+            <span class="domain-name">
+                IEEE
+            </span>
+
+
+            <span class="domain-description">
+                Research projects
+            </span>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================
+     ABOUT / PROCESS
+========================================= -->
+
+<section id="about"
+         class="section about">
+
+
+    <div>
+
+
+        <p class="eyebrow">
+            WHY ALGOFORGE
+        </p>
+
+
+        <h2 class="section-title">
+
+            Simple process.
+
+            <br>
+
+            Serious projects.
+
+        </h2>
+
+
+    </div>
+
+
+
+    <div class="steps">
+
+
+        <div class="step">
+
+
+            <span class="step-number">
+                01
+            </span>
+
+
+            <p>
+
+
+                <strong>
+                    Tell us your requirement
+                </strong>
+
+
+                <br>
+
+
+                Share your department,
+                topic and deadline.
+
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="step">
+
+
+            <span class="step-number">
+                02
+            </span>
+
+
+            <p>
+
+
+                <strong>
+                    Get a project plan
+                </strong>
+
+
+                <br>
+
+
+                We map the idea, stack,
+                features and deliverables.
+
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="step">
+
+
+            <span class="step-number">
+                03
+            </span>
+
+
+            <p>
+
+
+                <strong>
+                    Build & understand
+                </strong>
+
+
+                <br>
+
+
+                Develop the project with
+                documentation and demo support.
+
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================
+     CONTACT
+========================================= -->
+
+<section id="contact"
+         class="contact">
+
+
+    <div class="contact-inner">
+
+
+        <p class="eyebrow">
+            READY?
+        </p>
+
+
+        <h2 class="section-title">
+            Let's build your project.
+        </h2>
+
+
+        <p class="contact-description">
+
+            DM <strong>"PROJECT"</strong>
+            to get started.
+
+        </p>
+
+
+
+        <div class="contact-buttons">
+
+
+            <!-- =================================
+                 INSTAGRAM
+            ================================== -->
+
+            <a
+                href="https://www.instagram.com/algoforge_labs/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="button button-primary">
+
+                Instagram ↗
+
+            </a>
+
+
+
+            <!-- =================================
+                 GMAIL
+            ================================== -->
+
+            <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=mathankumar.mm7@gmail.com&su=AlgoForge%20Labs%20Project%20Enquiry&body=Hello%20AlgoForge%20Labs,%0A%0AI%20am%20interested%20in%20your%20project%20guidance%20services.%0A%0AProject%20Requirement:%0A%0ADepartment:%0A%0ADeadline:%0A%0AThank%20you."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="button button-secondary">
+
+                Email Us ↗
+
+            </a>
+
+
+
+            <!-- =================================
+                 WHATSAPP
+            ================================== -->
+
+            <a
+                href="https://wa.me/919345215393?text=Hello%20AlgoForge%20Labs,%20I%20am%20interested%20in%20your%20project%20guidance%20services.%20I%20would%20like%20to%20know%20more%20about%20the%20available%20projects."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="button whatsapp-button">
+
+                WhatsApp ↗
+
+            </a>
+
+
+        </div>
+
+
+
+        <!-- CONTACT DETAILS -->
+
+        <div class="contact-info">
+
+
+            <div class="contact-info-item">
+
+                <span>
+                    Email:
+                </span>
+
+                <strong>
+                    mathankumar.mm7@gmail.com
+                </strong>
+
+            </div>
+
+
+            <div class="contact-info-item">
+
+                <span>
+                    WhatsApp:
+                </span>
+
+                <strong>
+                    +91 93452 15393
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+</main>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+
+    <div>
+
+        © 2026 AlgoForge Labs
+
+    </div>
+
+
+    <div>
+
+        Project Guidance · Freelancing
+
+    </div>
+
+
+</footer>
+
+
+
+<!-- =========================================
+     FLOATING WHATSAPP BUTTON
+========================================= -->
+
+<a
+    href="https://wa.me/919345215393?text=Hello%20AlgoForge%20Labs,%20I%20am%20interested%20in%20your%20project%20guidance%20services.%20I%20would%20like%20to%20know%20more."
+    target="_blank"
+    rel="noopener noreferrer"
+    class="floating-whatsapp"
+    aria-label="Chat with AlgoForge Labs on WhatsApp">
+
+
+    <!-- WhatsApp SVG Icon -->
+
+    <svg
+        class="whatsapp-icon"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg">
+
+        <path d="
+            M17.472 14.382
+            c-.297-.149-1.758-.867-2.03-.967
+            -.273-.099-.471-.148-.67.15
+            -.197.297-.767.966-.94 1.164
+            -.173.199-.347.223-.644.075
+            -.297-.15-1.255-.463-2.39-1.475
+            -.883-.788-1.48-1.761-1.653-2.059
+            -.173-.297-.018-.458.13-.606
+            .134-.133.298-.347.446-.52
+            .149-.174.198-.298.298-.497
+            .099-.198.05-.372-.025-.521
+            -.075-.149-.669-1.611-.916-2.206
+            -.242-.579-.487-.5-.67-.51
+            -.173-.008-.372-.01-.57-.01
+            -.198 0-.52.074-.792.372
+            -.272.297-1.04 1.016-1.04 2.479
+            0 1.462 1.065 2.875 1.213 3.074
+            .149.198 2.096 3.2 5.077 4.487
+            .709.306 1.262.489 1.694.626
+            .712.227 1.36.195 1.871.118
+            .571-.085 1.758-.719 2.006-1.413
+            .248-.694.248-1.289.173-1.413
+            -.074-.124-.272-.198-.57-.347
+            m-5.421 7.403h-.004
+            a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982
+            1-3.648-.235-.374
+            a9.86 9.86 0 111.82 1.67
+            l-.375-.222-3.78.994 1.008-3.693-.243-.378
+            a9.86 9.86 0 014.843-15.112
+            9.86 9.86 0 0110.08 2.09
+            9.86 9.86 0 012.89 7.01
+            9.88 9.88 0 01-9.872 9.873
+        "/>
+
+    </svg>
+
+
+</a>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script>
+
+
+    /* =========================================
+       SMOOTH SCROLL
+    ========================================== */
+
+    document
+        .querySelectorAll('a[href^="#"]')
+        .forEach(function(link) {
+
+            link.addEventListener(
+                "click",
+                function(event) {
+
+                    const target =
+                        document.querySelector(
+                            link.getAttribute("href")
+                        );
+
+
+                    if (target) {
+
+                        event.preventDefault();
+
+
+                        target.scrollIntoView({
+
+                            behavior: "smooth",
+
+                            block: "start"
+
+                        });
+
+                    }
+
+                }
+            );
+
+        });
+
+
+
+    /* =========================================
+       SCROLL ANIMATION
+    ========================================== */
+
+    const animatedElements =
+        document.querySelectorAll(
+            ".service, .step, .domain"
+        );
+
+
+    const observer =
+        new IntersectionObserver(
+
+            function(entries) {
+
+                entries.forEach(
+                    function(entry) {
+
+                        if (
+                            entry.isIntersecting
+                        ) {
+
+                            entry.target.style.opacity =
+                                "1";
+
+                            entry.target.style.transform =
+                                "translateY(0)";
+
+                        }
+
+                    }
+                );
+
+            },
+
+            {
+                threshold: 0.1
+            }
+
+        );
+
+
+    animatedElements.forEach(
+        function(element) {
+
+            element.style.opacity =
+                "0";
+
+            element.style.transform =
+                "translateY(20px)";
+
+            element.style.transition =
+                "opacity .6s ease, transform .6s ease";
+
+            observer.observe(element);
+
+        }
+    );
+
+
+</script>
+
+
+</body>
+
+</html>
